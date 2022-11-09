@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <style>
-        body{
+        /* body{
             background-color: whitesmoke;
-            /* nav bar css */
+        } */
+        /* nav bar css */
+        #navbar{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid white;
+            height: auto;
         }
-        #navbar:first-child{
+        #navbar>div:first-child{
             background-color:#85E0FF;
             text-align: center;
             font-size: 20px;
@@ -19,7 +25,6 @@
             border: 1px solid white;
         }
         #navbar>div:nth-child(2){
-            /* background-color:#85E0FF; */
            display: flex;
            justify-content: space-between;
            border: 1px solid white;
@@ -33,7 +38,100 @@
             font-size: 20px;
             border: 0px solid white;
         }
-
+        /* top css */
+       #top{
+        display: flex;
+        justify-content: space-evenly;
+        border: 1px solid snow;
+        height: auto;
+        background-color: snow;
+       }
+       #top>div:nth-child(1){
+        width: 40%;
+        border: 1px solid white;
+        margin: auto;
+       }
+       #top>div:nth-child(2){
+        width: 40%;
+        border: 1px solid white;
+        margin: auto;
+       }#top h1{
+        color: gray;
+        font-size: 50px;
+       }
+       #top p{
+        font-size: 20px;
+        color: gray;
+       }
+       #top button{
+        padding: 10px 50px;
+        color: white;
+        background-color: lightsalmon;
+        font-size: 20px;
+        border: 0px solid white;
+        border-radius: 10px;
+       }
+       /* weight loss css */
+       #weight-loss{
+        display: flex;
+        margin: auto;
+        justify-content: space-around;
+        text-align: center;
+       }
+       #weight-loss h3{
+        color: lightsalmon;
+       }
+       /* tracking css */
+       #tracking{
+        display: grid;
+        text-align: center;
+        grid-template-columns: repeat(3,1fr);
+        gap: 0px;
+        background-color: whitesmoke;
+        margin-top: 50px;
+       }
+       #tracking>div{
+        border: 1px solid white;
+        padding-top: 30px;
+        margin: 50px;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+       }
+       #pound-lost{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 30px;
+       }
+       #pound-lost>div:last-child{
+        display: flex;
+        justify-content: space-around;
+       }
+       #pound-lost h1{
+        color: lightsalmon;
+        font-size: 80px;
+       }
+       #pound-lost p{
+        color: gray;
+        font-size: 40px;
+       }
+       #pound-lost h4{
+        color: lightsalmon;
+        font-size: 30px;
+       }
+       /* tag css */
+       h2{
+        text-align: center;
+        color: gray;
+        font-size: 30px;
+       }
+       h3{
+        color: lightsalmon;
+       }
+       p{
+        color: gray;
+       }
     </style>
 </head>
 <body>
@@ -46,12 +144,100 @@
             <button><a href="login.html">Login</a></button>    
         </div>
     </div>
-    <!-- home page top section upto advice  -->
-    <div id="top container">
-
+    <!-- Home page top section -->
+    <div id="top">
+        <div>
+            <img width="50%" src="https://assets.loseit.com/website/home/Screenshot_LogScreenFixed.png">
+        </div>
+        <div>
+            <h1>Top Rated<br/>
+                Weight Loss Plan</h1>
+            <p>Track the foods you love and lose weight</p>
+            <button><a href="signUp.html">Sign Up for Free</a></button>
+        </div>
     </div>
-
+    <!-- Home page weight loss section-->
+    <h2>Weight Loss Made Easy</h2>
+    <div id="weight-loss">
+        <div>
+            <h3>Set Your Goals</h3>
+            <img width="40%" src="https://assets.loseit.com/website/home/Home_SetGoal.svg">
+            <p>Tell us what you want to acheive and<br/> receive personalized goals.</p>
+        </div>
+        <div>
+            <h3>Track Your Food</h3>
+            <img width="40%" src="https://assets.loseit.com/website/home/Home_TrackFoods.svg">
+            <p>Learn about the foods you're eating and<br/> keep your calories within your daily<br/> budget.</p>
+        </div>
+        <div>
+            <h3>Lose Weight</h3>
+            <img width="40%" src="https://assets.loseit.com/website/home/Home_LoseWeight.svg">
+            <p>Reach your goals and continue to set<br/> new ones for a happier, healthier you!</p>
+        </div>
+    </div>
+    <!-- Home page Tracking section 1 main div 6 child div -->
+    <div id="tracking">
+        <div>
+            <img width="40%" src="https://assets.loseit.com/website/home/Features_WaterTracking.svg">
+            <h3>Water Tracking</h3>
+            <p>Track your water intake to make sure you're getting the<br/> recommended amount daily.</p>
+        </div>
+        <div>
+            <img width="40%" src="https://assets.loseit.com/website/home/Features_Macros.svg">
+            <h3>Macro Tracking</h3>
+            <p>Set personalized macronutrient goals to ensure you're <br/>getting enough protein, carbs, and more.</p>
+        </div>
+        <div>
+            <img width="40%" src="https://assets.loseit.com/website/home/Features_DeviceIntegration.svg">
+            <h3>Device Integration</h3>
+            <p>Connect Apple Health and Google Fit for easy exercise<br/> tracking.</p>
+        </div>
+        <div>
+            <img width="40%" src="https://assets.loseit.com/website/home/Features_PatternsReports.svg">
+            <h3>Patterns & Reports</h3>
+            <p>Get reports on your behaviors and progress straight to your<br/> inbox.</p>
+        </div>
+        <div>
+            <img width="40%" src="https://assets.loseit.com/website/home/Features_Barcode.svg">
+            <h3>Scanner Feature</h3>
+            <p>Use your camera to scan package barcodes for quick<br/>
+                 tracking or create new foods with the nutrition label auto-fill.</p>
+        </div>
+        <div>
+            <img width="40%" src="https://assets.loseit.com/website/home/Features_SnapIt.svg">
+            <h3>Smart Camera</h3>
+            <p>Use your camera to take a picture of your food and allow Lose It! technology to help you log it.</p>
+        </div>
+    </div>
+    <!-- Home page pound lost section -->
+    <div id="pound-lost">
+        <div>
+            <img width="30%" src="https://assets.loseit.com/website/home/Ticker_Celebratory.svg"/>
+        </div>
+        <div>
+            <h1>125,381,638</h1>
+            <p>POUNDS LOST</p>
+        </div>
+        <h4>AS SEEN ON</h4>
+        <div>
+            
+            <div>
+                <img width="50%" src="https://assets.loseit.com/website/home/Feature_TodayShow.png">
+            </div>
+            <div>
+                <img width="50%" src="https://assets.loseit.com/website/home/Feature_People.png">
+            </div>
+            <div>
+                <img width="50%" src="https://assets.loseit.com/website/home/Feature_GoodMorningAmerica.png">
+            </div>
+            <div>
+                <img width="50%" src="https://assets.loseit.com/website/home/Feature_WomensHealth.png">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 <script>
-    console.log(1);
+
+</script>
+

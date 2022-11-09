@@ -5,141 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <style>
-        /* body{
-            background-color: whitesmoke;
-        } */
-        /* nav bar css */
-        #navbar{
-            display: flex;
-            flex-direction: column;
-            border: 1px solid white;
-            height: auto;
-        }
-        #navbar>div:first-child{
-            background-color:#85E0FF;
-            text-align: center;
-            font-size: 20px;
-            width: 100%;
-            height: 50px;
-            border: 1px solid white;
-        }
-        #navbar>div:nth-child(2){
-           display: flex;
-           justify-content: space-between;
-           border: 1px solid white;
-           height: 150px;
-        }
-        #navbar>div:nth-child(2)>button{
-            margin: 50px;
-            padding: 0px 50px;
-            border-radius: 10px;
-            background-color: lightsalmon;
-            font-size: 20px;
-            border: 0px solid white;
-        }
-        /* top css */
-       #top{
-        display: flex;
-        justify-content: space-evenly;
-        border: 1px solid snow;
-        height: auto;
-        background-color: snow;
-       }
-       #top>div:nth-child(1){
-        width: 40%;
-        border: 1px solid white;
-        margin: auto;
-       }
-       #top>div:nth-child(2){
-        width: 40%;
-        border: 1px solid white;
-        margin: auto;
-       }#top h1{
-        color: gray;
-        font-size: 50px;
-       }
-       #top p{
-        font-size: 20px;
-        color: gray;
-       }
-       #top button{
-        padding: 10px 50px;
-        color: white;
-        background-color: lightsalmon;
-        font-size: 20px;
-        border: 0px solid white;
-        border-radius: 10px;
-       }
-       /* weight loss css */
-       #weight-loss{
-        display: flex;
-        margin: auto;
-        justify-content: space-around;
-        text-align: center;
-       }
-       #weight-loss h3{
-        color: lightsalmon;
-       }
-       /* tracking css */
-       #tracking{
-        display: grid;
-        text-align: center;
-        grid-template-columns: repeat(3,1fr);
-        gap: 0px;
-        background-color: whitesmoke;
-        margin-top: 50px;
-       }
-       #tracking>div{
-        border: 1px solid white;
-        padding-top: 30px;
-        margin: 50px;
-        border-radius: 10px;
-        background-color: white;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-       }
-       #pound-lost{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 30px;
-       }
-       #pound-lost>div:last-child{
-        display: flex;
-        justify-content: space-around;
-       }
-       #pound-lost h1{
-        color: lightsalmon;
-        font-size: 80px;
-       }
-       #pound-lost p{
-        color: gray;
-        font-size: 40px;
-       }
-       #pound-lost h4{
-        color: lightsalmon;
-        font-size: 30px;
-       }
-       /* tag css */
-       h2{
-        text-align: center;
-        color: gray;
-        font-size: 30px;
-       }
-       h3{
-        color: lightsalmon;
-       }
-       p{
-        color: gray;
-       }
-    </style>
+    <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
     <!-- home page nav bar -->
     <div id="navbar">
         <div><p>Get Fit! is hiring! click here to see our open position</p></div>
         <div>
-            <img width="15%" src="C:\Users\DELL\Desktop\Get Fit.jpg">
+            <img width="15%" src="file:///C:/Users/DELL/Downloads/Get%20Fit%201.webp">
             <button><a href="signUp.html">Sign Up</a></button>
             <button><a href="login.html">Login</a></button>    
         </div>
@@ -212,7 +85,7 @@
     <!-- Home page pound lost section -->
     <div id="pound-lost">
         <div>
-            <img width="30%" src="https://assets.loseit.com/website/home/Ticker_Celebratory.svg"/>
+            <img width="20%" src="https://assets.loseit.com/website/home/Ticker_Celebratory.svg"/>
         </div>
         <div>
             <h1>125,381,638</h1>
@@ -235,9 +108,58 @@
             </div>
         </div>
     </div>
+    <!-- Home advice section -->
+    <div id="advice">
+        <div>
+            <h1>Advice from Successful Members</h1>
+        </div>
+        <div>
+            <div>
+            <img width="40%" src="https://assets.loseit.com/website/home/Advice_Carla.png"/>
+            <p>Track every single bite you take. You need to know<br/> 
+                how you're doing before dinner. If you don't, things can <br/>
+                get away from you fast."</p>
+                <p>- Carla, 65 lbs lost without giving up pizza.</p>
+            </div>
+            <div>
+            <img width="40%" src="https://assets.loseit.com/website/home/Advice_Alex.png" >
+            <p>Everyday is a battle, and you have to make the choice<br/>
+                 each morning to fight for your health and wellness"</p>
+                 <p>- Alex, lost 85 lbs for his wedding.</p> 
+            </div>
+        </div>
+        <div>
+            <button>Share Your Story</button>
+        </div>
+    </div>
+    <!-- Home page balance approach  -->
+    <div id="balance">
+        <div>
+            <h1>A Balanced Approach to Weight Loss</h1>
+            <p>Get motivated with these nutrition and wellness tips and user success stories!</p>
+        </div>
+        <div id="balance-slide">
+            <button><</button>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <button>></button>
+        </div>
+        <div>
+            <button>Get Weight Loss Tips</button>
+        </div>
+    </div>
+    <!-- Home page get started -->
+    <div id="get-started">
+        <div>
+            <p>Get Started on Mobile</p>
+        </div>
+        <div>
+            <img width="20%" src="https://static.vecteezy.com/system/resources/previews/002/520/836/original/download-apps-button-google-play-and-app-store-vector.jpg">
+        </div>
+    </div>
+    <!-- Home page footer part-1 -->
 </body>
 </html>
-<script>
-
-</script>
+<script src="index.js"></script>
 

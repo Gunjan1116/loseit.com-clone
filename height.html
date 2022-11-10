@@ -58,7 +58,7 @@
             <option value="">St</option>
             <option value="cm">Cm</option>
         </select>
-        <a href="gender.html"><button id="continue_h">Continue</button></a>
+        <button id="continue_height">Continue</button>
         <p>To create your personalized weight loss plan, Lose It! uses BMR<br/>
              (Basal Metabolic Rate) to calculate your calorie budget, which<br/>
              requires weight, height, biological gender and age as inputs.</p>
@@ -74,19 +74,16 @@
 </body>
 </html>
 <script>
-    
-    document.querySelector("#continue_h").addEventListener("click",saveHeight);
+    let obj=JSON.parse(localStorage.getItem("details"));
+    document.querySelector("#continue_height").addEventListener("click",saveHeight);
     function saveHeight(){
         let height=document.querySelector("#height").value;
         if(height==""){
             alert("Please enter your height")
         }else{
-            obj={
-                curr_weig,
-                goal_weig
-            }
+            obj.height=height;
             localStorage.setItem("details",JSON.stringify(obj));
-        }
-        
+            window.location.href="gender.html";
+        }  
     }
 </script>

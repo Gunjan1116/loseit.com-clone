@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question page</title>
+    <style>
+        /* question page lower part css */
+        #main{
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            margin-right: 50px;
+        }
+        /* question page heading image css */
+        #heading-pic>div:nth-child(2){
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        #heading-pic>div:nth-child(1) h1{
+            color: darkorange;
+            text-align: center;
+        }
+        /* question page yes no css */
+        #yes-no{
+            text-align: center;
+            padding:80px;
+            background-color: gainsboro;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        }
+        #yes-no button{
+            background-color: darkorange;
+            color: white;
+            font-size: 30px;
+            padding: 10px 70px;
+            border: 0px solid white;
+            margin-bottom: 20px;
+        }
+        #yes-no h3{
+            font-size: 19px;
+            color: #183962;
+        }
+        /* footer part css */
+        #footer-para{
+        text-align: center;
+        background-color: #183962;
+        padding: 20px 0px;
+        margin-top: 30px;
+       }
+       #footer-para p{
+        color: white;
+       }
+    </style>
+</head>
+<body>
+    <!-- Question page navbar -->
+    <div id="navbar">
+            <img width="15%" src="./Get Fit.jpg">
+    </div>
+    <!-- Question page lower part -->
+    <div id="main">
+        <!-- question page heading and image -->
+        <div id="heading-pic">
+            <div><h1>Take the first step towards<br/>
+                a healthier you with Get Fit!</h1></div>
+            <div>
+                <div>
+                    <img width="40%" src="https://assets.loseit.com/website/home/Home_SetGoal.svg">
+                    <p>SET YOUR GOALS</p>
+                </div>
+                <div>
+                    <img width="40%" src="https://assets.loseit.com/website/onboarding/TrackFoods.svg">
+                    <p>TRACK YOUR FOODS</p>
+                </div>
+                <div>
+                    <img width="40%" src="https://assets.loseit.com/website/home/Home_LoseWeight.svg">
+                    <p>LOSE WEIGHT</p>
+                </div>
+            </div>
+        </div>
+        <!-- question page yes no -->
+        <div id="yes-no">
+            <div>
+                <h3>Have you counted calories<br/>
+                before?</h3>
+            </div>
+            <div>
+                <a href="weight.html"><button>Yes</button></a>
+            </div>
+            <div>
+                <a href="weight.html"><button>No</button></a>
+            </div>
+        </div>
+    </div>
+    <div id="footer-para">
+        <p>Copyright 2008-2022 FitNow, Inc, All Rights Reserved<br/>
+            Privacy | Terms of Service<br/>
+            Do Not Sell My Personal Information</p>
+        <p>Get Fit! is among the federally registered trademarks of FitNow, Inc., and may not be 
+            used by third parties without explicit permission.</p>
+    </div>
+</body>
+</html>

@@ -5,8 +5,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthday</title>
+    <style>
+         h3{
+            color: #183962;
+            font-size: 30px;
+        }
+        /* birthday page mid section */
+        #mid-input{
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            margin: 0px 400px;
+            text-align: center;
+            padding: 20px;
+            background-color: gainsboro;
+            border-radius: 10px;
+        }
+        #continue{
+            margin-top: 20px;
+            border: 0px solid white;
+            background-color: darkorange;
+            padding: 10px 65px;
+            border-radius: 10px;
+            color: white;
+            font-size: 30px;   
+        }
+        #mid-input>div>input{
+            padding: 10px 150px;
+            font-size: 20px;
+            color: gray;
+        }
+         /* footer part css */
+         #footer-para{
+        text-align: center;
+        background-color: #183962;
+        padding: 20px 0px;
+        margin-top: 30px;
+       }
+       #footer-para p{
+        color: white;
+       }
+    </style>
 </head>
 <body>
-    
+    <div id="navbar">
+        <img width="15%" src="./Get Fit.jpg">
+    </div>
+    <div id="mid-input">
+            <h3>When's your birthday?</h3>
+            <div><input id="date" type="date"></div>
+            <div><button id="continue">Continue</button></div>
+            <p>To create your personalized weight loss plan, Get Fit! uses BMR<br/>
+             (Basal Metabolic Rate) to calculate your calorie budget, which<br/>
+             requires weight, height, biological gender and age as inputs.</p>
+    </div>    
+    <div id="footer-para">
+        <p>Copyright 2008-2022 FitNow, Inc, All Rights Reserved<br/>
+            Privacy | Terms of Service<br/>
+            Do Not Sell My Personal Information</p>
+        <p>Get Fit! is among the federally registered trademarks of FitNow, Inc., and may not be 
+            used by third parties without explicit permission.</p>
+    </div>     
 </body>
 </html>
+<script>
+    let obj=JSON.parse(localStorage.getItem("details"));
+    document.querySelector("#continue").addEventListener("click",birthday);
+    function birthday(){
+            let birthday=document.querySelector("#date").value;
+            console.log(birthday);
+            // convert user input value into date object
+            let birthDate = new Date(birthday);
+            console.log(birthDate);
+            // get difference from current date;
+            let difference=Date.now() - birthDate.getTime(); 
+            console.log(difference)
+            let  ageDate = new Date(difference); 
+	        let calculatedAge=   Math.abs(ageDate.getUTCFullYear() - 1970);
+            console.log(calculatedAge);
+            if(calculatedAge<18){
+                alert("You must be at least 18 years old to use Get Fit!")
+            }else{
+                obj.birthday=birthday;
+                localStorage.setItem("details",JSON.stringify(obj));
+                window.location.href="plane.html";
+            } 
+    }
+   console.log(Date.now())
+</script>

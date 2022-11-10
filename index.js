@@ -122,6 +122,6 @@ let data=[
         display_1(data[i]);
         display_2(data[j]);
         display_3(data[k]);
-    },1000);
+    },2000);
 
     

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height page</title>
+    <style>
+        h3{
+            color: #183962;
+            font-size: 30px;
+        }
+        /* weight page mid section */
+        #mid-input{
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            margin: 0px 400px;
+            text-align: center;
+            padding: 20px;
+            background-color: gainsboro;
+            border-radius: 10px;
+        }
+        #mid-input button{
+            margin-top: 20px;
+            border: 0px solid white;
+            background-color: darkorange;
+            padding: 10px 50px;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+        }
+        #mid-input input{
+            padding: 5px 20px;
+        }
+        #mid-input select{
+            padding: 5px 80px;
+        }
+        /* footer part css */
+        #footer-para{
+        text-align: center;
+        background-color: #183962;
+        padding: 20px 0px;
+        margin-top: 30px;
+       }
+       #footer-para p{
+        color: white;
+       }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <img width="15%" src="./Get Fit.jpg">
+    </div>
+    <div id="mid-input">
+        <div>
+            <h3>What's your height?</h3>
+        <input id="height" type="number"/>
+        <select class="choice">
+            <option value="">St</option>
+            <option value="cm">Cm</option>
+        </select>
+        <a href="gender.html"><button id="continue_h">Continue</button></a>
+        <p>To create your personalized weight loss plan, Lose It! uses BMR<br/>
+             (Basal Metabolic Rate) to calculate your calorie budget, which<br/>
+             requires weight, height, biological gender and age as inputs.</p>
+        </div>
+    </div>    
+    <div id="footer-para">
+        <p>Copyright 2008-2022 FitNow, Inc, All Rights Reserved<br/>
+            Privacy | Terms of Service<br/>
+            Do Not Sell My Personal Information</p>
+        <p>Get Fit! is among the federally registered trademarks of FitNow, Inc., and may not be 
+            used by third parties without explicit permission.</p>
+    </div>     
+</body>
+</html>
+<script>
+    
+    document.querySelector("#continue_h").addEventListener("click",saveHeight);
+    function saveHeight(){
+        let height=document.querySelector("#height").value;
+        if(height==""){
+            alert("Please enter your height")
+        }else{
+            obj={
+                curr_weig,
+                goal_weig
+            }
+            localStorage.setItem("details",JSON.stringify(obj));
+        }
+        
+    }
+</script>

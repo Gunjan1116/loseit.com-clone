@@ -10,6 +10,9 @@
             border: 1px solid white;
             height: auto;
         }
+        #navbar a{
+            color: white;
+        }
         #navbar>div:first-child{
             background-color:#85E0FF;
             text-align: center;
@@ -28,7 +31,7 @@
             margin: 50px;
             padding: 0px 50px;
             border-radius: 10px;
-            background-color: lightsalmon;
+            background-color: darkorange;
             font-size: 20px;
             border: 0px solid white;
         }
@@ -44,11 +47,13 @@
         width: 40%;
         border: 1px solid white;
         margin: auto;
+        margin-left: 200px;
        }
        #top>div:nth-child(2){
         width: 40%;
         border: 1px solid white;
         margin: auto;
+        margin-right: 100px;
        }#top h1{
         color: gray;
         font-size: 50px;
@@ -60,10 +65,13 @@
        #top button{
         padding: 10px 50px;
         color: white;
-        background-color: lightsalmon;
+        background-color: #183962;
         font-size: 20px;
         border: 0px solid white;
         border-radius: 10px;
+       }
+       #top a{
+        color: white;
        }
        /* weight loss css */
        #weight-loss{
@@ -73,7 +81,7 @@
         text-align: center;
        }
        #weight-loss h3{
-        color: lightsalmon;
+        color: darkorange;
        }
        /* tracking css */
        #tracking{
@@ -104,7 +112,7 @@
         justify-content: space-around;
        }
        #pound-lost h1{
-        color: lightsalmon;
+        color: darkorange;
         font-size: 80px;
        }
        #pound-lost p{
@@ -112,7 +120,7 @@
         font-size: 40px;
        }
        #pound-lost h4{
-        color: lightsalmon;
+        color: darkorange;
         font-size: 30px;
        }
        /* advice css */
@@ -134,7 +142,7 @@
        }
        #advice button{
         color: white;
-        background-color: lightsalmon;
+        background-color: darkorange;
         font-size: 20px;
         padding: 10px 50px;
         border-radius: 10px;
@@ -147,7 +155,7 @@
         font-size: 30px;
        }
        h3{
-        color: lightsalmon;
+        color: darkorange;
        }
        p{
         color: gray;
@@ -187,7 +195,7 @@
        #balance-slide button{
         margin: 90px 0px;
         font-size: 20px;
-        color: lightsalmon;
+        color: darkorange;
        }
        #balance-slide img{
         margin-top: 20px;
@@ -203,12 +211,12 @@
        }
        #get-started p{
         font-size: 30px;
-        color: lightsalmon;
+        color: darkorange;
        }
        #get-started div:nth-child(2){
         margin-bottom: 30px;
        }
-       /* footer part css */
+       /* Home page footer part css */
        #main-footer{
         border: 1px solid white;
         background-color: #183962;

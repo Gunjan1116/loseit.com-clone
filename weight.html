@@ -77,7 +77,7 @@
                 <option value="kg">Kg</option>
             </select>
             </div>
-            <a href="height.html"><button id="continue">Continue</button></a>
+            <button id="continue">Continue</button>
             <p>To create your personalized weight loss plan, Lose It! uses BMR<br/>
                  (Basal Metabolic Rate) to calculate your calorie budget, which<br/>
                  requires weight, height, biological gender and age as inputs.</p>
@@ -99,19 +99,19 @@
         let curr_weig=document.querySelector("#current_weight").value;
         let goal_weig=document.querySelector("#goal_weight").value;
         if(curr_weig==""&&goal_weig==""){
-            alert("Please enter weight details")
+            alert("Please enter weight details");
         }else if(curr_weig==""){
-            alert("Please enter your current weight")
+            alert("Please enter your current weight");
         }else if(goal_weig==""){
-            alert("Please enter your goal weight")
+            alert("Please enter your goal weight");
         }else{
-            let a=document.createElement("a");
-            a.setAttribute("href",heigh)
+           
             obj={
                 curr_weig,
                 goal_weig
             }
             localStorage.setItem("details",JSON.stringify(obj));
+            window.location.href="height.html";
         }
         
     }

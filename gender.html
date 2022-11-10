@@ -5,8 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gender page</title>
+    <style>
+         h3{
+            color: #183962;
+            font-size: 30px;
+        }
+        /* weight page mid section */
+        #mid-input{
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            margin: 0px 400px;
+            text-align: center;
+            padding: 20px;
+            background-color: gainsboro;
+            border-radius: 10px;
+        }
+        #gender_female{
+            margin-top: 20px;
+            border: 0px solid white;
+            background-color: darkorange;
+            padding: 10px 50px;
+            border-radius: 10px;
+            color: white;
+            font-size: 30px;
+        }
+        #gender_male{
+            margin-top: 20px;
+            border: 0px solid white;
+            background-color: darkorange;
+            padding: 10px 65px;
+            border-radius: 10px;
+            color: white;
+            font-size: 30px;
+            
+        }
+        /* footer part css */
+        #footer-para{
+        text-align: center;
+        background-color: #183962;
+        padding: 20px 0px;
+        margin-top: 30px;
+       }
+       #footer-para p{
+        color: white;
+       }
+    </style>
 </head>
 <body>
-    
+    <div id="navbar">
+        <img width="15%" src="./Get Fit.jpg">
+    </div>
+    <div id="mid-input">
+            <h3>Select Your Gender:</h3>
+            <div><button id="gender_female">Female</button></div>
+            <div><button id="gender_male">Male</button></div>
+            <p>To create your personalized weight loss plan, Lose It! uses BMR<br/>
+             (Basal Metabolic Rate) to calculate your calorie budget, which<br/>
+             requires weight, height, biological gender and age as inputs.</p>
+    </div>    
+    <div id="footer-para">
+        <p>Copyright 2008-2022 FitNow, Inc, All Rights Reserved<br/>
+            Privacy | Terms of Service<br/>
+            Do Not Sell My Personal Information</p>
+        <p>Get Fit! is among the federally registered trademarks of FitNow, Inc., and may not be 
+            used by third parties without explicit permission.</p>
+    </div>     
 </body>
 </html>
+<script>
+    let obj=JSON.parse(localStorage.getItem("details"));
+    document.querySelector("#gender_female").addEventListener("click",female);
+    function female(event){
+            let gender=event.target.innerText;
+            obj.gender=gender;
+            localStorage.setItem("details",JSON.stringify(obj));
+            window.location.href="birthday.html";
+        
+    }
+    document.querySelector("#gender_male").addEventListener("click",male);
+    function male(event){
+            let gender=event.target.innerText;
+            obj.gender=gender;
+            localStorage.setItem("details",JSON.stringify(obj));
+            window.location.href="birthday.html";
+        
+    }
+</script>

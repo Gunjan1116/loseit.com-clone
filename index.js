@@ -36,5 +36,92 @@ let data=[
         image: "https://i0.wp.com/loseitblog.com/wp-content/uploads/2019/09/Untitled-design-126.png?w=1010&ssl=1"
         ,des:"10 Tips For Making Healthier Choices When Dining Out" 
     }]
+    let i=0;
+    let j=1;
+    let k=2;
+    let z;
+    display_1(data[i]);
+    display_2(data[j]);
+    display_3(data[k]);
+    function display_1(arr){
+        document.querySelector("#slide-1").innerHTML="";
+        let img=document.createElement("img");
+        img.setAttribute("src",arr.image);
+        let p=document.createElement("p");
+        p.innerText=arr.des;
+        document.querySelector("#slide-1").append(img,p);
+    }
+    function display_2(arr){
+        document.querySelector("#slide-2").innerHTML="";
+        let img=document.createElement("img");
+        img.setAttribute("src",arr.image);
+        let p=document.createElement("p");
+        p.innerText=arr.des;
+        document.querySelector("#slide-2").append(img,p);
+    }
+    function display_3(arr){
+        document.querySelector("#slide-3").innerHTML="";
+        let img=document.createElement("img");
+        img.setAttribute("src",arr.image);
+        let p=document.createElement("p");
+        p.innerText=arr.des;
+        document.querySelector("#slide-3").append(img,p);
+    }
+    document.querySelector("#front").addEventListener("click",forward);
+    function forward(){
+        clearInterval(z);
+        i=i+3;
+        j=j+3;
+        k=k+3;
+        if(i>6){
+            i=0;
+        }
+        if(j>7){
+            j=1;
+        }
+        if(k>8){
+            k=2;
+        }
+        display_1(data[i]);
+        display_2(data[j]);
+        display_3(data[k]);
+    }
+    document.querySelector("#back").addEventListener("click",backward);
+    function backward(){
+        clearInterval(z);
+        i=i-3;
+        j=j-3;
+        k=k-3;
+        if(i<0){
+            i=6;
+        }
+        if(j<0){
+            j=7;
+        }
+        if(k<0){
+            k=8;
+        }
+        
+        display_1(data[i]);
+        display_2(data[j]);
+        display_3(data[k]);
+    }
+    z=setInterval(function(){
+        i=i+3;
+        j=j+3;
+        k=k+3;
+        if(i>6){
+            i=0;
+        }
+        if(j>7){
+            j=1;
+        }
+        if(k>8){
+            k=2;
+        }
+        display_1(data[i]);
+        display_2(data[j]);
+        display_3(data[k]);
+    },1000);
 
     

@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question page</title>
     <style>
+         #navbar>img:hover{
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
         /* question page lower part css */
         #main{
             margin: auto;
@@ -105,3 +109,8 @@
     </div>
 </body>
 </html>
+<script>
+    document.querySelector("#navbar").addEventListener("click",function(){
+        window.location.href="index.html"
+    });
+</script>

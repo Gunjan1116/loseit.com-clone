@@ -1,16 +1,21 @@
 /* Home page style(index page css) */
+
         body{
             margin: 0px;
             padding: 0px;
         }
         /* nav bar css */
+        #navbar>div:nth-child(2)>img:hover{
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
         #navbar{
             display: flex;
             flex-direction: column;
             border: 1px solid white;
             height: auto;
         }
-        #navbar a{
+        #navbar a>button{
             color: white;
         }
         #navbar>div:first-child{
@@ -27,13 +32,17 @@
            border: 1px solid white;
            height: 150px;
         }
-        #navbar>div:nth-child(2)>button{
+        #navbar>div:nth-child(2)>a>button{
             margin: 50px;
-            padding: 0px 50px;
+            padding: 10px 50px;
             border-radius: 10px;
             background-color: darkorange;
             font-size: 20px;
             border: 0px solid white;
+        }
+        #navbar>div:nth-child(2)>a>button:hover{
+            cursor: pointer;
+            background-color: lightsalmon;
         }
         /* top css */
        #top{
@@ -72,6 +81,11 @@
        }
        #top a{
         color: white;
+       }
+       #signhov:hover{
+        background-color: lightblue;
+        cursor: pointer;
+        color: black;
        }
        /* weight loss css */
        #weight-loss{

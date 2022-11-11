@@ -10,16 +10,150 @@
             background-color: lightsalmon;
             cursor: pointer;
         }
+        /* footer part css */
+        #footer-para{
+        text-align: center;
+        background-color: #183962;
+        padding: 20px 0px;
+        margin-top: 30px;
+       }
+       #footer-para p{
+        color: white;
+       }
+       h3{
+            color: #183962;
+            font-size: 30px;
+        }
+       #mid-input{
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            margin: 0px 400px;
+            text-align: center;
+            padding: 20px;
+            background-color: gainsboro;
+            border-radius: 10px;
+        }
+        #mid-input p{
+            font-size: 20px;
+            color: #183962;
+        }
+        #mid-input h4{
+            font-size: 22px;
+            color: rgb(2, 25, 32);
+        }
+        #mid-input>div:nth-child(2)>div{
+            display: flex;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        #get-fit{
+            margin-top: 20px;
+            border: 0px solid white;
+            background-color: darkorange;
+            padding: 10px 65px;
+            border-radius: 10px;
+            color: white;
+            font-size: 30px;   
+        }
+        #get-fit:hover{
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div id="navbar">
         <img width="15%" src="./Get Fit.jpg">
     </div>
+    <div id="mid-input">
+        <h3>Your personal weight loss<br/>
+             plan is ready.</h3>
+        <div>
+            <div>
+                <div>
+                    <img width="30%" src="https://assets.loseit.com/website/onboarding/PlanWatermelon.svg" >
+                </div>
+                <div>
+                    <p>Daily calorie budget:</p>
+                    <h4 id="calorie"></h4>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img width="30%" src="https://assets.loseit.com/website/onboarding/PlanAward.svg" >
+                </div>
+                <div>
+                    <p>Total weight loss:</p>
+                    <h4 id="weight-loss"></h4>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img width="30%" src="https://assets.loseit.com/website/onboarding/PlanCalendar.svg" >
+                </div>
+                <div>
+                    <p>Weekly weight loss</p>
+                    <h4 id="weekly-loss"></h4>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img width="30%" src="https://assets.loseit.com/website/onboarding/PlanStar.svg" >
+                </div>
+                <div>
+                    <p>Goal date:</p>
+                    <h4 id="goal-date"></h4>
+                </div>
+            </div>
+        </div>
+        <div><button id="get-fit">Get Fit!</button></div>
+    </div>    
+    <div id="footer-para">
+        <p>Copyright 2008-2022 FitNow, Inc, All Rights Reserved<br/>
+            Privacy | Terms of Service<br/>
+            Do Not Sell My Personal Information</p>
+        <p>Get Fit! is among the federally registered trademarks of FitNow, Inc., and may not be 
+            used by third parties without explicit permission.</p>
+    </div> 
 </body>
 </html>
 <script>
     document.querySelector("#navbar").addEventListener("click",function(){
         window.location.href="index.html"
     });
+    let arr_data=JSON.parse(localStorage.getItem("arr_data"))||[];
+    let LSdata=JSON.parse(localStorage.getItem("details"));
+    arr_data.push(LSdata);
+    //console.log(LSdata);
+    let BMR;
+    let gender=LSdata.gender;
+    if(gender=="Male"){
+        BMR=66.47+(13.75*(Number(LSdata.curr_weig)))+(5.003*(Number(LSdata.height)))-
+        (6.755*(Number(LSdata.age)));
+    }else if(gender=="Female"){
+        BMR=655.1+(9.563*(Number(LSdata.curr_weig)))+(1.850*(Number(LSdata.height)))-
+        (6.755*(Number(LSdata.age)));
+    }
+    //console.log(Math.floor(BMR));
+    let AMR;
+    let goal_date;
+    let age=Number(LSdata.age);
+    if(age>=18&&age<=24){
+        AMR=Math.floor(1.5*BMR);
+        goal_date="April 1, 2023"
+    }else  if(age>=25&&age<=35){
+        AMR=Math.floor(1.375*BMR);
+        goal_date="July 1, 2023"
+    }else{
+        AMR=Math.floor(1.2*BMR);
+        goal_date="December 1, 2023"
+    }
+    let calorie=Math.floor(AMR);
+    document.querySelector("#calorie").innerText=AMR+" calories";
+    document.querySelector("#weight-loss").innerText=(Number(LSdata.curr_weig)-Number(LSdata.goal_weig))+" kilograms";
+    document.querySelector("#weekly-loss").innerText="¾ kilogram";
+    document.querySelector("#goal-date").innerText=goal_date;
+    document.querySelector("#get-fit").addEventListener("click",function(){
+        window.location.href="signUp.html"
+    })
 </script>

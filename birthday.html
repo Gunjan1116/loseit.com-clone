@@ -93,6 +93,7 @@
                 alert("You must be at least 18 years old to use Get Fit!")
             }else{
                 obj.birthday=birthday;
+                obj.age=calculatedAge;
                 localStorage.setItem("details",JSON.stringify(obj));
                 window.location.href="plane.html";
             } 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up Page</title>
     <style>
          #navbar>img:hover{
             background-color: lightsalmon;
@@ -54,6 +54,9 @@
             border-radius: 5px;
             border: 1px solid gray;
         }
+        #mid-input input:hover{
+            border: 2px solid darkorange;
+        }
     </style>
 </head>
 <body>
@@ -85,4 +88,29 @@
     document.querySelector("#navbar").addEventListener("click",function(){
         window.location.href="index.html"
     });
+    let arr=JSON.parse(localStorage.getItem("arr_data"))||[];
+    let obj=JSON.parse(localStorage.getItem("details"));
+    document.querySelector("#continue").addEventListener("click",addData);
+    function addData(){
+        let name=document.querySelector("#name").value;
+        let email=document.querySelector("#email").value;
+        let pass=document.querySelector("#pass").value;
+        let confirm_pass=document.querySelector("#confirm_pass").value;
+        if(pass!==confirm_pass){
+            alert("Please enter correct password");   
+        }
+        else if(name==""||email==""||pass==""||confirm_pass==""){
+            alert("Please enter all details")
+        }
+        else{
+            obj.name=name;
+            obj.email=email;
+            obj.password=pass;
+            obj.confirm_password=confirm_pass;
+            localStorage.setItem("details",JSON.stringify(obj));
+            alert("Your Account is Created Successfully")
+            arr.push(obj);
+            localStorage.setItem("arr_data",JSON.stringify(arr));
+        }
+    }
 </script>

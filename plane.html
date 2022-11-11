@@ -121,9 +121,7 @@
     document.querySelector("#navbar").addEventListener("click",function(){
         window.location.href="index.html"
     });
-    let arr_data=JSON.parse(localStorage.getItem("arr_data"))||[];
     let LSdata=JSON.parse(localStorage.getItem("details"));
-    arr_data.push(LSdata);
     //console.log(LSdata);
     let BMR;
     let gender=LSdata.gender;

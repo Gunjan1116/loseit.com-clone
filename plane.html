@@ -5,8 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plane Page</title>
+    <style>
+        #navbar>img:hover{
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="navbar">
+        <img width="15%" src="./Get Fit.jpg">
+    </div>
 </body>
 </html>
+<script>
+    document.querySelector("#navbar").addEventListener("click",function(){
+        window.location.href="index.html"
+    });
+</script>

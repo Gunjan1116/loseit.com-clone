@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gender page</title>
     <style>
+         #navbar>img:hover{
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
          h3{
             color: #183962;
             font-size: 30px;
@@ -89,4 +93,7 @@
             window.location.href="birthday.html";
         
     }
+    document.querySelector("#navbar").addEventListener("click",function(){
+        window.location.href="index.html"
+    });
 </script>

@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weight page</title>
     <style>
+         #navbar>img:hover{
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
         /* tag css */
         h1{
             text-align: center;
@@ -115,4 +119,7 @@
         }
         
     }
+    document.querySelector("#navbar").addEventListener("click",function(){
+        window.location.href="index.html"
+    });
 </script>

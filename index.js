@@ -123,5 +123,8 @@ let data=[
         display_2(data[j]);
         display_3(data[k]);
     },2000);
+    document.querySelector("#refresh").addEventListener("click",function(){
+        window.location.href="index.html"
+    });
 
     

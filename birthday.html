@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthday</title>
     <style>
+         #navbar>img:hover{
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
          h3{
             color: #183962;
             font-size: 30px;
@@ -72,6 +76,10 @@
     function birthday(){
             let birthday=document.querySelector("#date").value;
             console.log(birthday);
+            if(birthday==""){
+                alert("Please enter your bithday");
+                return;
+            }
             // convert user input value into date object
             let birthDate = new Date(birthday);
             console.log(birthDate);
@@ -90,4 +98,7 @@
             } 
     }
    console.log(Date.now())
+   document.querySelector("#navbar").addEventListener("click",function(){
+        window.location.href="index.html"
+    });
 </script>

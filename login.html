@@ -4,9 +4,96 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Page</title>
+    <style>
+        #navbar{
+            text-align: center;
+        }
+        #navbar>img:hover{
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
+        #mid-input{
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            margin: 0px 400px;
+            text-align: center;
+            padding: 20px;
+            background-color: gainsboro;
+            border-radius: 10px;
+        }
+        #mid-input button{
+            margin-top: 20px;
+            border: 0px solid white;
+            background-color: darkorange;
+            padding: 10px 150px;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+        }
+        #mid-input button:hover{
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
+        #mid-input input{
+            padding: 10px 55px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        #mid-input input:hover{
+            border: 2px solid darkorange;
+        }
+        /* footer part css */
+        #footer-para{
+        text-align: center;
+        background-color: #183962;
+        padding: 20px 0px;
+        margin-top: 30px;
+       }
+       #footer-para p{
+        color: white;
+       }
+    </style>
 </head>
 <body>
-    
-</body>
+    <div id="navbar">
+        <img width="15%" src="./Get Fit.jpg">
+    </div>
+    <div id="mid-input">
+        <span>Email address</span>
+    <div><input id="email" type="text"></div>
+    <span>Password</span>
+    <div><input id="pass" type="password"></div>
+    <div><button id="continue">Log In</button></div>
+    <p>Don't have an account?<a href="question.html">Create one now!</a></p>
+    </div>
+    <div id="footer-para">
+        <p>© Copyright 2008-2022 FitNow, Inc. All Rights Reserved
+            <br/>Privacy | Terms of Service</p>
+    </div>
 </html>
+<script>
+    document.querySelector("#navbar").addEventListener("click",function(){
+        window.location.href="index.html"
+    });
+    let arr_r=JSON.parse(localStorage.getItem("arr_data"));
+    document.querySelector("#continue").addEventListener("click",checkData);
+    function checkData(){
+        let email=document.querySelector("#email").value;
+        let pass=document.querySelector("#pass").value;
+        let flag=false;
+        for(let i=0;i<arr_r.length;i++){
+            if(email==arr_r[i].email&&pass==arr_r[i].password){
+                flag=true;
+                break;
+            }
+        }
+        if(flag){
+            alert("Login Successful");
+        }else{
+            alert("Wrong Credentials");
+        }
+    }
+</script>

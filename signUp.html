@@ -74,7 +74,7 @@
             Terms of Service and Privacy Policy</p>
         <div><button id="continue">Get Started</button></div>
        
-</div>  
+    </div>  
     <div id="footer-para">
         <p>Copyright 2008-2022 FitNow, Inc, All Rights Reserved<br/>
             Privacy | Terms of Service<br/>
@@ -93,6 +93,12 @@
     document.querySelector("#continue").addEventListener("click",addData);
     function addData(){
         let name=document.querySelector("#name").value;
+        for(let i=0;i<arr.length;i++){
+            if(arr[i].name==name){
+                alert("You already have an account")
+                return;
+            }
+        }
         let email=document.querySelector("#email").value;
         let pass=document.querySelector("#pass").value;
         let confirm_pass=document.querySelector("#confirm_pass").value;
@@ -101,8 +107,7 @@
         }
         else if(name==""||email==""||pass==""||confirm_pass==""){
             alert("Please enter all details")
-        }
-        else{
+        }else{
             obj.name=name;
             obj.email=email;
             obj.password=pass;
@@ -112,5 +117,9 @@
             arr.push(obj);
             localStorage.setItem("arr_data",JSON.stringify(arr));
         }
+        document.querySelector("#continue").addEventListener("click",function(){
+        window.location.href="payment.html"
+        });
     }
+    
 </script>

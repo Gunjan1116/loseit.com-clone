@@ -116,10 +116,8 @@
             alert("Your Account is Created Successfully")
             arr.push(obj);
             localStorage.setItem("arr_data",JSON.stringify(arr));
+            window.location.href="payment.html"
         }
-        document.querySelector("#continue").addEventListener("click",function(){
-        window.location.href="payment.html"
-        });
     }
     
 </script>

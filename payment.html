@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        #navbar>img:hover{
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
+        h3{
+            color: #183962;
+            font-size: 30px;
+        }
+        /* footer part css */
+        #footer-para{
+        text-align: center;
+        background-color: #183962;
+        padding: 20px 0px;
+        margin-top: 30px;
+       }
+       #footer-para p{
+        color: white;
+       }
+       #mid-input{
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            display: flex;
+            justify-content: space-around;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+            background-color: gainsboro;
+            border-radius: 10px;
+            width: 60%;
+        }
+        #mid-input button{
+            margin-top: 20px;
+            border: 0px solid white;
+            background-color: darkorange;
+            padding: 10px 40px;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+        }
+        #mid-input button:hover{
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
+        #mid-input input{
+            padding: 10px 40px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        #mid-input input:hover{
+            border: 2px solid darkorange;
+        }
+        #second-mid p{
+           text-align: center;
+        }
+        #mid-input h1{
+            color: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <img width="15%" src="./Get Fit.jpg">
+    </div>
+    <div id="mid-input">
+        <div id="first-mid">
+            <div>
+                <h1>3x</h1>
+                <span>Premium members report 3x the weight loss.</span>
+            </div>
+            <div id="image">
+                <h3>Start your free trial today and<br/> 
+                    gain access to all of Lose It!</h3>
+                    <div>
+                        <div><p>Macro Tracking</p></div>
+                        <img width="20%" src="https://assets.loseit.com/website/trials/carbs-percent.svg">
+                    </div>
+                    <div>
+                        <div><p>Advanced Goal Setting</p></div>
+                        <div><img width="20%" src="https://assets.loseit.com/website/trials/general-goal.svg"></div>
+                    </div>
+                    <div>
+                        <div><p>and much more</p></div>
+                        <div><img width="20%" src="https://assets.loseit.com/website/trials/exercise.svg"></div>
+                    </div>
+            </div>
+        </div>
+        <div id="second-mid">
+            <h3>Get Fit! Premium</h3>
+            <div><input id="name" type="text" placeholder="Full Name"></div>
+            <div><input id="card" type="number" placeholder="Card Number"></div>
+            <div><button id="try">Try Free and Subscribe</button></div>
+            <p>1.Total due during free trial: $0.00.<br>
+               2.Plan will commence on Nov 19, 2022<br/>
+                and then auto-renew yearly at $39.99<br/>
+                USD/year (or the then-current yearly<br/>
+                subscription rate for your Lose It! plan),<br/>
+                and auto-renewal of one-year terms will<br/>
+                continue until you cancel.<br/>
+                3.No commitments; cancel anytime<br/>
+                before Nov 19, 2022 to not be charged, or<br/>
+                at any time during you subscription, by<br/>
+                going to manage subscriptions or by<br/>
+                emailing web_sub@Getfit.zendesk.com.</p>
+        </div>
+    </div>
+    <div id="footer-para">
+        <p>Copyright 2008-2022 FitNow, Inc, All Rights Reserved<br/>
+            Privacy | Terms of Service<br/>
+            Do Not Sell My Personal Information</p>
+        <p>Get Fit! is among the federally registered trademarks of FitNow, Inc., and may not be 
+            used by third parties without explicit permission.</p>
+    </div> 
+</body>
+</html>
+<script>
+    let check_arr=JSON.parse(localStorage.getItem("arr_data"));
+    document.querySelector("#try").addEventListener("click",check);
+    function check(){
+      let name=document.querySelector("#name").value;
+      let card=document.querySelector("#card").value;
+      let flag=false;
+      for(let i=0;i<check_arr.length;i++){
+        if(check_arr[i].name==name&&card=="1234567890"){
+            flag=true;
+            break;
+        }
+      }
+      if(flag){
+        alert("You are now member of Get Fit!")
+        window.location.href="login.html";
+      }else{
+        alert("Wrong card details");
+      }
+      
+    }
+</script>

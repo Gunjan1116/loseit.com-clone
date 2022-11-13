@@ -89,19 +89,22 @@
             if(email==arr_r[i].email&&pass==arr_r[i].password){
                 flag=true;
                 break;
-            }else if(email=="admin@gmail.com"&&pass=="1234"){
-                flag="admin";
-                break;
             }
+        }
+        let flag1="no"
+         if(email=="admin@gmail.com"&&pass=="1234"){
+                flag1="admin";
+            }
+            if(flag1=="admin"){
+            alert("You have successfully Login to admin page");
+            window.location.href="admin.html";
+            return;
         }
         if(flag){
             alert("Login Successful");
         }else{
             alert("Wrong Credentials");
         }
-        if(flag=="admin"){
-            alert("You have successfully Login to admin page");
-            window.location.href="admin.html";
-        }
+        
     }
 </script>

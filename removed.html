@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Removed User Page</title>
+    <style>
+        table{
+       width: 60%;
+       border-collapse: collapse;
+       margin: auto;
+       text-align: center;
+       margin-top: 40px;
+     }
+     table th{
+       border: 1px solid white;
+       padding: 8px;
+       text-align: center;
+       background-color: darkorange;
+       color: #183962;
+       font-size: 20px;
+     }
+     table td{
+       border: 1px solid gray;
+       padding: 8px;
+       text-align: center;
+       
+     }
+     #nav{
+       display: flex;
+       justify-content: space-around;
+     }
+     #navbar>img:hover{
+           background-color: lightsalmon;
+           cursor: pointer;
+       }
+       h1{
+           color: #183962;
+       }
+   </style>
+</head>
+<body>
+    <div id="navbar">
+        <img width="15%" src="./Get Fit.jpg">
+        <a href="admin.html">Admin Home Page</a>
+    </div>
+    <div id="nav">
+        <h1>Admin Removed User Page</h1>
+        
+      </div>
+    <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Current calorie budget</th>
+            <th>Goal calorie budget</th>
+            <th>Age</th>
+            <th>Birthday</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Current Weight</th>
+            <th>Goal Weight</th>
+            <th>Height</th>
+            <th>Goal Completion Date</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+</body>
+</html>
+<script>
+    document.querySelector("#navbar").addEventListener("click",function(){
+        window.location.href="index.html"
+    });
+    let arr=JSON.parse(localStorage.getItem("remove"));
+    displaytable(arr);
+    function displaytable(arr){
+    document.querySelector("tbody").innerText="";
+    arr.forEach(function(elem,i){
+        let row=document.createElement("tr");
+        let td1=document.createElement("td");
+        td1.innerText=elem.name;
+        let td2=document.createElement("td");
+        td2.innerText=elem.AMR_curr;
+        let td3=document.createElement("td");
+        td3.innerText=elem.AMR_goal;
+        let td4=document.createElement("td");
+        td4.innerText=elem.age;
+        let td5=document.createElement("td");
+        td5.innerText=elem.birthday;
+        let td6=document.createElement("td");
+        td6.innerText=elem.email;
+        let td7=document.createElement("td");
+        td7.innerText=elem.gender;
+        let td8=document.createElement("td");
+        td8.innerText=elem.curr_weig;
+        let td9=document.createElement("td");
+        td9.innerText=elem.goal_weig;
+        let td10=document.createElement("td");
+        td10.innerText=elem.height;
+        let td11=document.createElement("td");
+        td11.innerText=elem.goal_date;
+        let td12=document.createElement("td");
+        td12.innerText=elem.password;
+    
+        row.append(td1,td2,td3,td4,td5,td6,td7,td8,td9,td10,td11,td12);
+        document.querySelector("tbody").append(row);
+    })
+}
+
+</script>

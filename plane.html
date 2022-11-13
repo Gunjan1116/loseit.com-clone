@@ -124,34 +124,47 @@
     let LSdata=JSON.parse(localStorage.getItem("details"));
     //console.log(LSdata);
     let BMR;
+    let BMR_goal;
     let gender=LSdata.gender;
     if(gender=="Male"){
         BMR=66.47+(13.75*(Number(LSdata.curr_weig)))+(5.003*(Number(LSdata.height)))-
         (6.755*(Number(LSdata.age)));
+        BMR_goal=66.47+(13.75*(Number(LSdata.goal_weig)))+(5.003*(Number(LSdata.height)))-
+        (6.755*(Number(LSdata.age)));
     }else if(gender=="Female"){
         BMR=655.1+(9.563*(Number(LSdata.curr_weig)))+(1.850*(Number(LSdata.height)))-
+        (6.755*(Number(LSdata.age)));
+        BMR_goal=655.1+(9.563*(Number(LSdata.goal_weig)))+(1.850*(Number(LSdata.height)))-
         (6.755*(Number(LSdata.age)));
     }
     //console.log(Math.floor(BMR));
     let AMR;
+    let AMR_goal;
     let goal_date;
     let age=Number(LSdata.age);
     if(age>=18&&age<=24){
         AMR=Math.floor(1.5*BMR);
+        AMR_goal=Math.floor(1.5*BMR_goal);
         goal_date="April 1, 2023"
     }else  if(age>=25&&age<=35){
         AMR=Math.floor(1.375*BMR);
+        AMR_goal=Math.floor(1.375*BMR_goal);
         goal_date="July 1, 2023"
     }else{
         AMR=Math.floor(1.2*BMR);
+        AMR_goal=Math.floor(1.2*BMR_goal);
         goal_date="December 1, 2023"
     }
-    let calorie=Math.floor(AMR);
-    document.querySelector("#calorie").innerText=AMR+" calories";
+    document.querySelector("#calorie").innerText=AMR_goal+" calories";
     document.querySelector("#weight-loss").innerText=(Number(LSdata.curr_weig)-Number(LSdata.goal_weig))+" kilograms";
     document.querySelector("#weekly-loss").innerText="¾ kilogram";
     document.querySelector("#goal-date").innerText=goal_date;
     document.querySelector("#get-fit").addEventListener("click",function(){
         window.location.href="signUp.html"
     })
+    LSdata.AMR_goal=AMR_goal;
+    LSdata.AMR_curr=AMR;
+    LSdata.goal_date=goal_date;
+    LSdata.weight_loss=(Number(LSdata.curr_weig)-Number(LSdata.goal_weig));
+    localStorage.setItem("details",JSON.stringify(LSdata));
 </script>
